@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Rowdies:wght@300;400;700&family=Ubuntu:wght@300;400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fceec8;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  padding-top: 100px;
+  display: flex;
+
+  .left-content,
+  .right-content {
+    flex-basis: 50%;
+  }
+
+  .left-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+    grid-gap: 2rem;
+
+    .btn-group {
+      display: flex;
+
+      button {
+        outline: none;
+        border: none;
+        width: 150px;
+        padding: 0.3rem 0;
+        margin: 1rem;
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        background-color: #b74555;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .right-content {
+    width: 50%;
+    text-align: center;
+    columns: #000;
+    position: fixed;
+    top: 100px;
+    right: 10px;
+  }
+}
+
+.card {
+  width: 300px;
+  background-color: #9edef9;
+  border-radius: 1rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  padding: 0 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.infoImg {
+  margin: 2rem;
+}
+
+.abilities {
+  width: 30%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+
+  .group {
+    background-color: #b74555;
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+}
+
+.base-stat {
+  margin-top: 2rem;
+}
