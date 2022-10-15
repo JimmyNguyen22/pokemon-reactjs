@@ -8,15 +8,15 @@ export const Main = () => {
   const [loading, setLoading] = useState(true);
   const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
   const [nextUrl, setNextUrl] = useState();
-  const [prevUrl, setprevUrl] = useState();
+  const [prevUrl, setPrevUrl] = useState();
   const [pokeDex, setPokeDex] = useState();
 
   const pokeFun = async () => {
     setLoading(true);
     const res = await axios.get(url);
     setNextUrl(res.data.next);
-    getPokemon(res.data.previous);
-    setprevUrl(res.data.results);
+    setPrevUrl(res.data.previous);
+    getPokemon(res.data.results);
     setLoading(false);
   };
 
@@ -47,8 +47,26 @@ export const Main = () => {
           ></Card>
 
           <div className="btn-group">
-            <button>Previous</button>
-            <button>Next</button>
+            {prevUrl && (
+              <button
+                onClick={() => {
+                  setPokeData([]);
+                  setUrl(prevUrl);
+                }}
+              >
+                Previous
+              </button>
+            )}
+            {nextUrl && (
+              <button
+                onClick={() => {
+                  setPokeData([]);
+                  setUrl(nextUrl);
+                }}
+              >
+                Next
+              </button>
+            )}
           </div>
         </div>
         <div className="right-content">

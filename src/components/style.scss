@@ -25,22 +25,32 @@ body {
   .left-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
-    grid-gap: 2rem;
+    grid-gap: 2rem 3rem;
+    position: relative;
 
     .btn-group {
       display: flex;
+      position: absolute;
+      bottom: -7rem;
+      right: 0;
 
       button {
         outline: none;
         border: none;
+        max-width: 150px;
         width: 150px;
-        padding: 0.3rem 0;
+        padding: 0.5rem 0;
         margin: 1rem;
         font-size: 17px;
         font-weight: 700;
         color: #fff;
         background-color: #b74555;
         border-radius: 8px;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
   }
@@ -63,20 +73,21 @@ body {
   padding: 0 1.5em;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  cursor: pointer;
 }
 
 .infoImg {
   margin: 2rem;
+  height: 200px;
 }
 
 .abilities {
-  width: 30%;
-  margin: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin-top: 1rem;
+  gap: 1rem;
 
   .group {
     background-color: #b74555;
